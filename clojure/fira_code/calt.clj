@@ -314,9 +314,7 @@
       :else (compare l1 l2)))) ;; alphabetical
 
 (defn replace-calt [font ligas]
-  (let [ligas' (->> ligas
-                 (remove manual?) 
-                 (sort compare-ligas))
+  (let [ligas' '()
         calt   (->> ligas'
                  (map liga->rule)
                  (str/join "\n\n"))

@@ -30,6 +30,10 @@
                          (assoc :labels
                            [{:language "dflt"
                              :value    name}])
+
+                         (and (str/starts-with? tag "cv") name)
+                         (assoc :notes name)
+
                          true (assoc :tag tag))]
     (glyphs/set-feature font tag feature)))
 
