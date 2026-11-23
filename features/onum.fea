@@ -9,4 +9,4 @@ sub six by six.tosf;
 sub seven by seven.tosf;
 sub eight by eight.tosf;
 sub nine by nine.tosf;
-sub x.multiply by x.multiply.tosf;
+# sub x.multiply by x.multiply.tosf;

@@ -52,12 +52,18 @@ def transform(data):
 
 
 def main(data):
-    if 0:
+    if 1:
         # unexport liga from source
+        keep_spacer_names = ['F', 'T', 'f']
+
         expglys = set()
         for d in data['glyphs']:
-            if d['glyphname'].endswith('.liga'):
+            parts = d['glyphname'].split('.')
+            if (('liga' in parts and 'ss10' not in parts) or
+                ('seq' in parts) or
+                ('spacer' in parts and not (len(parts) == 2 and parts[0] in keep_spacer_names))):
                 d['export'] = 0
+
             if d.get('export') != 0:
                 expglys.add(d['glyphname'])
         # if a glyph is not exported, remove it from class
@@ -68,7 +74,7 @@ def main(data):
             kl['code'] = d.join(gs)
 
     # delete some data for easier diffing
-    if 1:
+    if 0:
         for d in data['glyphs']:
             # if d.get('export') == 0:
             #     # print(d['glyphname'])
