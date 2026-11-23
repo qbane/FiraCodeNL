@@ -567,7 +567,7 @@ value = (
 }
 );
 date = "2025-02-08 14:47:16 +0000";
-familyName = "Fira Code";
+familyName = "Fira Code NL";
 featurePrefixes = (
 {
 code = "languagesystem DFLT dflt;
@@ -138045,14 +138045,14 @@ name = "zone 1";
 name = "zone 2";
 }
 );
-note = "Based on Fira Mono 3.206";
+note = "Ligature-free fork of Fira Code. Based on Fira Code commit 2c88d7efede650269d00828027174744588fb374, Fira Mono 3.206.";
 properties = (
 {
 key = copyrights;
 values = (
 {
 language = dflt;
-value = "Copyright 2014-2021 The Fira Code Project Authors (https://github.com/tonsky/FiraCode)";
+value = "Copyright 2014-2021 The Fira Code Project Authors (https://github.com/tonsky/FiraCode); 2023-2026 qbane (https://github.com/qbane/FiraCodeNL)";
 }
 );
 },
@@ -138087,7 +138087,7 @@ key = manufacturers;
 values = (
 {
 language = dflt;
-value = "Carrois Corporate, Edenspiekermann AG, Nikita Prokopov";
+value = "Carrois Corporate, Edenspiekermann AG, Nikita Prokopov, qbane";
 }
 );
 },
@@ -138143,6 +138143,6 @@ oV = 98;
 };
 };
 };
-versionMajor = 7;
-versionMinor = 0;
+versionMajor = 6;
+versionMinor = 99;
 }
