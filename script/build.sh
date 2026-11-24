@@ -6,7 +6,7 @@ features=()
 weights=()
 gen_glyphs_file_only=0
 use_features_for_family_name=0
-export FIRACODE_FAMILY_NAME="Fira Code"
+export FIRACODE_FAMILY_NAME="Fira Code NL"
 
 ########### Parsing inputs ########### {{{
 check_required_args()
@@ -76,11 +76,11 @@ if [ "${use_features_for_family_name}" -ne 0 ]; then
 	FIRACODE_FAMILY_NAME=${FIRACODE_FAMILY_NAME}${feat_string}
 fi
 
-if [ "${FIRACODE_FAMILY_NAME}" != "Fira Code" ]; then
+if [ "${FIRACODE_FAMILY_NAME}" != "Fira Code NL" ]; then
 	tmp_glyphs=$(mktemp)
 	echo "Creating font with family name: ${FIRACODE_FAMILY_NAME}"
 
-	awk '/familyName = "Fira Code";/ {$0=nc}1' nc="familyName = \"${FIRACODE_FAMILY_NAME}\";" \
+	awk '/familyName = "Fira Code NL";/ {$0=nc}1' nc="familyName = \"${FIRACODE_FAMILY_NAME}\";" \
 		"${FIRACODE_GLYPHS_FILE}" > "${tmp_glyphs}"
 
 	mv "${tmp_glyphs}" "${FIRACODE_GLYPHS_FILE}"
@@ -96,8 +96,8 @@ fi
 
 ./build_otf.sh "${weights[@]}"
 ./build_ttf.sh "${weights[@]}"
-./build_variable.sh
+# ./build_variable.sh
 ./build_woff2.sh
-./build_woff.sh
+# ./build_woff.sh
 
 rm -f "${FIRACODE_GLYPHS_FILE}"
