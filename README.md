@@ -1,3 +1,27 @@
+# Fira Code NL
+
+A fork that removes ligatures from Fira Code.
+
+See https://hackmd.io/@q/fira-code-without-ligatures for details.
+
+Currently (2025~2026), it...
+
+* Undos features `ss02`/`ss07`/`ss08`/`ss09`/(`cv19`-`cv28`)/`cv32`
+* Slims down `calt` on ligatures using the included shell scripts and Clojure programs
+* Unexports all `*.liga` and `*.spacer` glyphs except for `ss10`, making `ss10` an extension to Fira Mono's `dlig`.
+
+## Hacking guide
+
+I use Python to convert between `.glyphs` plist and JSON. The provided scripts in `fcnl-utils` are expected to convert it *bidirectionally*. JSON format provides easier diffing and editing by hand. No extra Clojure script is written because I am incapable of.
+
+---
+
+The original README follows.
+
+---
+---
+---
+
 ## Fira Code: free monospaced font with programming ligatures
 
 ![Fira Code](./extras/logo.svg)
